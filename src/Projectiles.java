@@ -1,7 +1,5 @@
 import javax.swing.ImageIcon;
 
-import com.sun.javafx.geom.Rectangle;
-
 public class Projectiles {
 	int x, y, w, h, dx, dy;
 	ImageIcon pic;
