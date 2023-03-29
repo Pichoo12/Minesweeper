@@ -9,7 +9,7 @@ public class Main extends JFrame{
 		setSize(WIDTH, HEIGHT);
 		Game play = new Game();
 		((Component) play).setFocusable(true);
-		Color RoyalBlue = new Color(0,0,0);
+		Color RoyalBlue = new Color(50,200,200);
 		setBackground(RoyalBlue);
 		getContentPane().add(play);
 		setVisible(true);
