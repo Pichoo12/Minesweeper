@@ -9,20 +9,20 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	
 	private BufferedImage back; 
 	private int key; 
+	private Player p;
 
-
-
-	
-	public Game() {
+public Game() {
 		new Thread(this).start();	
 		this.addKeyListener(this);
 		key =-1; 
+		p =new Player();
+		
+		//plays music in background
+		p.playmusic("background music.wav");
 		
 	
 	}
 
-	
-	
 	public void run()
 	   {
 	   	try
@@ -48,11 +48,17 @@ public void paint(Graphics g){
 		Graphics g2d = back.createGraphics();
 	
 		g2d.clearRect(0,0,getSize().width, getSize().height);
-		//g2d.setFont( new Font("Broadway", Font.BOLD, 50));
-		twoDgraph.drawImage(back, null, 0, 0);
+		g2d.setFont( new Font("Arial", Font.BOLD, 10));
+		Color Black = new Color(0,0,0);
 
+
+		setBackground(Black);
+		
+//Drawing
 		//drawing amount of mines and flags
 		//g2d.drawString("Mines: " + //minetracker + " - Flags: " + flagged)");"
+		g2d.drawString ("Cheatcodes: M & N", 10, 650);
+		twoDgraph.drawImage(back, null, 0, 0);
 	}
 
 	
