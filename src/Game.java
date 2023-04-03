@@ -38,11 +38,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	      }
 	  	}
 	
-
-	
-	
-	
-	public void paint(Graphics g){
+public void paint(Graphics g){
 		
 		Graphics2D twoDgraph = (Graphics2D) g; 
 		if( back ==null)
@@ -52,14 +48,11 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		Graphics g2d = back.createGraphics();
 	
 		g2d.clearRect(0,0,getSize().width, getSize().height);
-		
-		g2d.setFont( new Font("Broadway", Font.BOLD, 50));
-		
-		g2d.drawString("key " + key, 340, 100);
-		
-	
+		//g2d.setFont( new Font("Broadway", Font.BOLD, 50));
 		twoDgraph.drawImage(back, null, 0, 0);
 
+		//drawing amount of mines and flags
+		//g2d.drawString("Mines: " + //minetracker + " - Flags: " + flagged)");"
 	}
 
 	
