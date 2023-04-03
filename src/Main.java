@@ -7,8 +7,8 @@ public class Main extends JFrame{
 	private static JFrame frame;
 	private static String title;
 
-	private static final int WIDTH =700;
-	private static final int HEIGHT=700;
+	private static final int WIDTH = 700;
+	private static final int HEIGHT= 700;
 	public Main () {
 		super("Mine Island");
 		setSize(WIDTH, HEIGHT);
