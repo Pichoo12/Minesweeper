@@ -9,6 +9,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	
 	private BufferedImage back; 
 	private int key; 
+	private Player p;
 
 
 
@@ -17,6 +18,10 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		new Thread(this).start();	
 		this.addKeyListener(this);
 		key =-1; 
+		p =new Player();
+		
+		//plays music in background
+		p.playmusic("background music.wav");
 		
 	
 	}
