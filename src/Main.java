@@ -1,5 +1,5 @@
 
-//EXAMPLE FRAME NOT OURS 
+//TESTING FRAME
 
 
 import javax.swing.JFrame;
