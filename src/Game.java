@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage; 
@@ -10,17 +11,22 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	private BufferedImage back; 
 	private int key; 
 	private Player p;
+	//Number is array of blocks for grid .. makes blocks in grid
+		public static final int grid = 8;	
+	//Number of mines for the grid 
+		public static final int mines = 10;
 
 public Game() {
 		new Thread(this).start();	
 		this.addKeyListener(this);
 		key =-1; 
-		p =new Player();
+		p = new Player();
 		
 		//plays music in background
 		p.playmusic("background music.wav");
 		
 	
+		
 	}
 
 	public void run()
@@ -38,6 +44,8 @@ public Game() {
 	      }
 	  	}
 	
+
+	
 public void paint(Graphics g){
 		
 		Graphics2D twoDgraph = (Graphics2D) g; 
@@ -50,20 +58,20 @@ public void paint(Graphics g){
 		g2d.clearRect(0,0,getSize().width, getSize().height);
 		g2d.setFont( new Font("Arial", Font.BOLD, 10));
 		Color Black = new Color(0,0,0);
+		
 
 
-		setBackground(Black);
+
+		//setBackground(Black);
 		
 //Drawing
 		//drawing amount of mines and flags
 		//g2d.drawString("Mines: " + //minetracker + " - Flags: " + flagged)");"
 		g2d.drawString ("Cheatcodes: M & N", 10, 650);
+		
+		
 		twoDgraph.drawImage(back, null, 0, 0);
 	}
-
-	
-
-
 
 	//DO NOT DELETE
 	@Override
@@ -71,11 +79,8 @@ public void paint(Graphics g){
 		// TODO Auto-generated method stub
 		
 	}
-
-
-
-
-//DO NOT DELETE
+	
+    //DO NOT DELETE
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -83,23 +88,20 @@ public void paint(Graphics g){
 		key= e.getKeyCode();
 		System.out.println(key);
 		
-		
-		
-	
 	}
 
 
 	//DO NOT DELETE
 	@Override
 	public void keyReleased(KeyEvent e) {
-		
-		
-		
+			
 		
 	}
 	
+
+
 	
-	
+
 
 	
 }
