@@ -12,7 +12,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	private int key; 
 	private Player p;
 	//Number is array of blocks for grid .. makes blocks in grid
-		public static final int grid = 8;	
+		public static final int grid = 10;	
 	//Number of mines for the grid 
 		public static final int mines = 10;
 
@@ -23,7 +23,7 @@ public Game() {
 		p = new Player();
 		
 		//plays music in background
-		p.playmusic("background music.wav");
+			p.playmusic("background music.wav");
 		
 	
 		
