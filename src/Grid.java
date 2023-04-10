@@ -21,6 +21,7 @@ public class Grid extends JPanel {
  //constructor to make grid on main   
     public Grid(GridLayout hishreya) {
         super(hishreya);
+        
 //to create the grid we called two methods 
         createBlocks();
         addBlocks();
