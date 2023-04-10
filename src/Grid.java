@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Grid extends JPanel {
 
-	//max blocks (makes it 8*8 (64) - refer to game class)
+	//maximum blocks (makes it 8*8 (64) - refer to game class)
     private int maximum = Game.grid * Game.grid;
     // prevents duplication
     private boolean Duplicated = false;

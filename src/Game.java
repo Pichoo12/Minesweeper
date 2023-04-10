@@ -89,6 +89,10 @@ public void paint(Graphics g){
 		System.out.println(key);
 		
 	}
+	public void mouseClicked(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		p.playmusic("click.mp3");
+	}
 
 
 	//DO NOT DELETE
