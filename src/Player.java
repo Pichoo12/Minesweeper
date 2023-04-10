@@ -12,7 +12,8 @@ public class Player {
 			
 			if (musicfile.equals("stop")) 
 			{
-					clip.stop();
+				
+				clip.stop();
 				System.out.print("stopped");
 				
 			}

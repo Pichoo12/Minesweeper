@@ -4,7 +4,6 @@ import java.awt.GridLayout;
 import javax.swing.*;
 
 //ERROR 2 JFrame wasn't extending 
-//We had to look up a lot on this 
 
 public class Main {
     public static void main(String[] args) {
