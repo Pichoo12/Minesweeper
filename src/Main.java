@@ -1,20 +1,38 @@
 
-//EXAMPLE FRAME NOT OURS 
-
-
-import javax.swing.JFrame;
+import java.awt.Color;
 import java.awt.GridLayout;
+import javax.swing.*;
+
+//ERROR 2 JFrame wasn't extending 
+//We had to look up a lot on this 
 
 public class Main {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("MineSweeper");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new GridLayout(1,1)); // set layout of JFrame to a 1x1 grid
+    	
+        JFrame frame = new JFrame();
         
-        Grid gridPanel = new Grid(new GridLayout(Game.grid, Game.grid)); // create new Grid panel
+        //Formatting 
+        //frame.setSize(Game.WIDTH, Game.HEIGHT);
+       // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); - closes jframe on exit
+        frame.setTitle("Mine Island");
         
-        frame.add(gridPanel); // add Grid panel to JFrame
-        frame.pack(); // resize JFrame to fit contents
-        frame.setVisible(true); // display JFrame
+        //size of frame
+        frame.setSize(800, 800);
+        
+        // positions Jframe in middle
+        frame.setLocationRelativeTo(null);
+        
+        //assigned to variable grid 
+        // found in game class
+        Grid grid = new Grid(new GridLayout(Game.grid, Game.grid));
+        Color RoyalBlue = new Color(173,216,230);
+        grid.setBackground(RoyalBlue); 
+        
+        //DONT DELETE this is what adds grid object to frame 
+       frame.add(grid);
+        //makes frame visible
+        frame.setVisible(true);
     }
 }
+
+
