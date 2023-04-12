@@ -63,7 +63,7 @@ public ImageIcon gettile() {
 //looked up this method to get sound on button
 private void playClickSound() {
     try {
-        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("click.wav").getAbsoluteFile());
+        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("click ms.wav").getAbsoluteFile());
         Clip clip = AudioSystem.getClip();
         clip.open(audioInputStream);
         clip.start();
