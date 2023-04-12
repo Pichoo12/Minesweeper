@@ -16,7 +16,7 @@ public class Main {
         //Formatting 
         //frame.setSize(Game.WIDTH, Game.HEIGHT);
        // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); - closes jframe on exit
-        frame.setTitle("Mine Island");
+        frame.setTitle("Minen Island");
         
         //size of frame
         frame.setSize(800, 800);
