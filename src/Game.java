@@ -91,7 +91,7 @@ public void paint(Graphics g){
 	}
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		p.playmusic("click.mp3");
+		p.playmusic("click.wav");
 	}
 
 
