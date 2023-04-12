@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import java.awt.event.*; 
 
 
-public class Game  extends JPanel implements Runnable, KeyListener{
+public class Game  extends JPanel implements Runnable, KeyListener, MouseListener, MouseMotionListener {
 
 	
 	private BufferedImage back; 
@@ -15,10 +15,13 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		public static final int grid = 10;	
 	//Number of mines for the grid 
 		public static final int mines = 10;
+		
 
 public Game() {
 		new Thread(this).start();	
 		this.addKeyListener(this);
+		this.addMouseListener(this);
+		this.addMouseMotionListener(this);
 		key =-1; 
 		p = new Player();
 		
@@ -77,7 +80,7 @@ public void paint(Graphics g){
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 	
     //DO NOT DELETE
@@ -88,17 +91,60 @@ public void paint(Graphics g){
 		key= e.getKeyCode();
 		System.out.println(key);
 		
+		if (e.getKeyCode()==78) {
+			
+			p.playmusic("stop");
+			p.playmusic("click.wav");
+		}
 	}
 	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		p.playmusic("click.wav");
+	    
+	        p.playmusic("click.wav");
+	    
 	}
-
 
 	//DO NOT DELETE
 	@Override
 	public void keyReleased(KeyEvent e) {
 			
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 	

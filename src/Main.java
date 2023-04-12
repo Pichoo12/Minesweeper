@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridLayout;
 import javax.swing.*;
 
@@ -22,8 +23,12 @@ public class Main {
         
         // positions Jframe in middle
         frame.setLocationRelativeTo(null);
+        
+        
+        
         frame.getContentPane().add(play);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ((Component) play).setFocusable(true);
         
         //assigned to variable grid 
         // found in game class
@@ -38,5 +43,3 @@ public class Main {
         frame.setVisible(true);
     }
 }
-
-

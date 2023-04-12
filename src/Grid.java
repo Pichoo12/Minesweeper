@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Grid extends JPanel {
 
-	//maximum blocks (makes it 8*8 (64) - refer to game class)
+	//max blocks (makes it 8*8 (64) - refer to game class)
     private int maximum = Game.grid * Game.grid;
     // prevents duplication
     private boolean Duplicated = false;
@@ -21,7 +21,6 @@ public class Grid extends JPanel {
  //constructor to make grid on main   
     public Grid(GridLayout hishreya) {
         super(hishreya);
-        
 //to create the grid we called two methods 
         createBlocks();
         addBlocks();
@@ -54,13 +53,13 @@ public class Grid extends JPanel {
         
  //OTHER BLOCKS
  //Blocks 0-99
- // draw this out     
+ // drew this out   
         for(int i = 0; i < maximum; i++) {
-            if(mines.contains(i)) { //checking if mine array contains mine index
-            	blockGrid.add(new Blocks(1, false, i, false)); //type 1 block the parameter is pull from the Block class constructor
+            if(mines.contains(i)) { //checking if mine array contains mine index grid counts horizontally
+            	blockGrid.add(new Blocks(1, false, i, false)); // Block class constructor 
             	
    //checks edge removes adjacent blocks to left for edge blocks
-            } else if(i % Game.grid == 0){ //grid counts horizontally
+            } else if(i % Game.grid == 0){ 
                 if(mines.contains(i - Game.grid) ||  //grid = 10
                         mines.contains(i - Game.grid + 1) ||
                         mines.contains(i + 1) ||
