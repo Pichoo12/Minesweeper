@@ -93,13 +93,13 @@ public void paint(Graphics g){
 		
 		if (e.getKeyCode()==78) {
 			
-			p.playmusic("stop");
-			p.playmusic("click.wav");
+			//p.playmusic("stop");
+			//p.playmusic("click.wav");
 		}
 	}
 	public void mouseClicked(MouseEvent arg0) {
 	    
-	        p.playmusic("click.wav");
+	        //p.playmusic("click.wav");
 	    
 	}
 
