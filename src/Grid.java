@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Grid extends JPanel {
 
 	//max blocks (makes it 8*8 (64) - refer to game class)
-    private int maximum = Game.grid * Game.grid;
+    private int maximum = Game.grid * Game.bid;
     // prevents duplication
     private boolean Duplicated = false;
 
@@ -56,7 +56,7 @@ public class Grid extends JPanel {
  // drew this out   
         for(int i = 0; i < maximum; i++) {
             if(mines.contains(i)) { //checking if mine array contains mine index grid counts horizontally
-            	blockGrid.add(new Blocks(1, false, i, false)); // Block class constructor 
+            	blockGrid.add(new Blocks(i, false, 1, false)); // Block class constructor 
             	
    //checks edge removes adjacent blocks to left for edge blocks
             } else if(i % Game.grid == 0){ 
@@ -65,9 +65,9 @@ public class Grid extends JPanel {
                         mines.contains(i + 1) ||
                         mines.contains(i + Game.grid) ||
                         mines.contains(i + Game.grid + 1)) {
-                    blockGrid.add(new Blocks(2, false, i, false));  //adds number blocks
+                    blockGrid.add(new Blocks(i, false, 2, false));  //adds number blocks
                 } else {
-                    blockGrid.add(new Blocks(0, false, i, false)); //adds blank cell
+                    blockGrid.add(new Blocks(i, false, 0, false)); //adds blank cell
                 }
                 
             
@@ -77,9 +77,9 @@ public class Grid extends JPanel {
                         mines.contains(i - 1) ||
                         mines.contains(i + Game.grid - 1) ||
                         mines.contains(i + Game.grid)) {
-                    blockGrid.add(new Blocks(2, false, i, false));
+                    blockGrid.add(new Blocks(i, false, 2, false));
                 } else {
-                    blockGrid.add(new Blocks(0, false, i, false));
+                    blockGrid.add(new Blocks(i, false, 0, false));
                 }
             }else {
                 if(mines.contains(i - Game.grid - 1) ||
@@ -90,9 +90,9 @@ public class Grid extends JPanel {
                         mines.contains(i + Game.grid - 1) ||
                         mines.contains(i + Game.grid) ||
                         mines.contains(i + Game.grid + 1)) {
-                    blockGrid.add(new Blocks(2, false, i, false));
+                    blockGrid.add(new Blocks(i, false, 2, false));
                 } else {
-                    blockGrid.add(new Blocks(0, false, i, false));
+                    blockGrid.add(new Blocks(i, false, 0, false));
                 }
             }
         }
@@ -106,3 +106,4 @@ public class Grid extends JPanel {
         }
     }
 }
+

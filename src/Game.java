@@ -12,7 +12,8 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 	private int key; 
 	private Player p;
 	//Number is array of blocks for grid .. makes blocks in grid
-		public static final int grid = 10;	
+		public static final int grid = 8;	
+		public static final int bid = 10;
 	//Number of mines for the grid 
 		public static final int mines = 10;
 		
@@ -27,9 +28,6 @@ public Game() {
 		
 		//plays music in background
 			p.playmusic("background music.wav");
-		
-	
-		
 	}
 
 	public void run()
