@@ -92,7 +92,7 @@ public class Grid extends JPanel {
                         mines.contains(i + Game.grid + 1)) {
                     blockGrid.add(new Blocks(i, false, 2, false));
                 } else {
-                    blockGrid.add(new Blocks(i, false, 0, false,));
+                    blockGrid.add(new Blocks(i, false, 0, false));
                 }
             }
         }
