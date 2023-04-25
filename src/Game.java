@@ -1,5 +1,3 @@
-//WE ARE ADDING UPDATED CODE FROM OUR ECLIPSE TONIGHT WHEN WE GET HOME 4/20
-
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,14 +11,11 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 	private BufferedImage back; 
 	private int key; 
 	private Player p;
-	private long startTime;
 	//Number is array of blocks for grid .. makes blocks in grid
-		public static final int grid = 8;	
-		public static final int bid = 10;
+		public static final int grid = 10;	
+
 	//Number of mines for the grid 
-		public static final int mines = 10;
-		
-		
+		public static final int mines =  10;
 		
 
 public Game() {
@@ -29,11 +24,13 @@ public Game() {
 		this.addMouseListener(this);
 		this.addMouseMotionListener(this);
 		key =-1; 
-		startTime = System.currentTimeMillis();
 		p = new Player();
 		
 		//plays music in background
 			p.playmusic("background music.wav");
+		
+	
+		
 	}
 
 	public void run()
@@ -66,10 +63,7 @@ public void paint(Graphics g){
 		g2d.setFont( new Font("Arial", Font.BOLD, 10));
 		Color Black = new Color(0,0,0);
 		
-			long elapsedTime = System.currentTimeMillis() - startTime;
-			g2d.drawString("Time: " + startTime / 1000 + "s", 300, 300);
-			// ...
-		}
+
 
 
 		//setBackground(Black);
@@ -77,11 +71,11 @@ public void paint(Graphics g){
 //Drawing
 		//drawing amount of mines and flags
 		//g2d.drawString("Mines: " + //minetracker + " - Flags: " + flagged)");"
-		//g2d.drawString ("Cheatcodes: M & N", 10, 650);
+		g2d.drawString ("Cheatcodes: M & N", 10, 650);
 		
-	//	
-	//	twoDgraph.drawImage(back, null, 0, 0);
-	//}
+		
+		twoDgraph.drawImage(back, null, 0, 0);
+	}
 
 	//DO NOT DELETE
 	@Override
@@ -100,13 +94,13 @@ public void paint(Graphics g){
 		
 		if (e.getKeyCode()==78) {
 			
-			//p.playmusic("stop");
-			//p.playmusic("click.wav");
+			p.playmusic("stop");
+			p.playmusic("click.wav");
 		}
 	}
 	public void mouseClicked(MouseEvent arg0) {
 	    
-	        //p.playmusic("click.wav");
+	        p.playmusic("click.wav");
 	    
 	}
 
