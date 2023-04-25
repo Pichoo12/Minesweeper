@@ -1,46 +1,46 @@
-
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridLayout;
 import javax.swing.*;
 
-//ERROR 2 JFrame wasn't extending 
-
 public class Main {
+    private static JFrame frame;
+    private static String title = "";
+    private static final int WIDTH = 800;
+    private static final int HEIGHT = 800;
+    private static final int GRID_SIZE = Game.grid;
+    private static Game game;
+    private static Discovery discovery;
+    
     public static void main(String[] args) {
-    	
-        JFrame frame = new JFrame();
-        Game play = new Game();
-
+       frame = new JFrame(title);
+        game = new Game();
+        discovery = new Discovery();
         
-        //Formatting 
-        //frame.setSize(Game.WIDTH, Game.HEIGHT);
-       // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); - closes jframe on exit
-        frame.setTitle("Mine Island");
-        
-        //size of frame
-        frame.setSize(800, 800);
-        
-        // positions Jframe in middle
+        frame.setSize(WIDTH, HEIGHT);
+     // positions Jframe in middle
         frame.setLocationRelativeTo(null);
-        
-        
-        
-        frame.getContentPane().add(play);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ((Component) play).setFocusable(true);
+        frame.setResizable(false);
         
-        //assigned to variable grid 
-        // found in game class
-        Grid grid = new Grid(new GridLayout(Game.grid, Game.grid));
+      //assigned to variable grid 
+      // found in game class
+        Grid grid = new Grid(new GridLayout(GRID_SIZE, GRID_SIZE), discovery);
         Color RoyalBlue = new Color(173,216,230);
         grid.setBackground(RoyalBlue); 
 
-        
         //DONT DELETE this is what adds grid object to frame 
-       frame.add(grid);
-        //makes frame visible
+        //makes from visibile 
+        
+        frame.getContentPane().add(grid);
         frame.setVisible(true);
+        
+        update(0);
+    }
+    
+    public static void update(int flagged) {
+        int numMines = Game.mines;
+        title = String.format("Mines: " + Game.mines + " | Flags: " + flagged);
+        frame.setTitle(title);
     }
 }
-
