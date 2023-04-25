@@ -6,7 +6,8 @@ import java.io.File;
 import javax.sound.sampled.*;
 //to create button object we extended Jbutton and plays music when clicking button
 public class Blocks extends JButton implements MouseListener {
-//spot of the block for location 
+private static final long serialVersionUID = 1L;
+	//spot of the block for location 
 	private int spot; 
 //spot is true or false based on if the block is found by player
 	private boolean discovered;
@@ -15,19 +16,37 @@ public class Blocks extends JButton implements MouseListener {
 // indicates if flags is placed
 	private boolean flags;
 	private ImageIcon tile;
+	private Discovery discovery;
 	
 //put everything as a parameter for blocks to define each object
 // assigns parameter to "instance" variables {outside of constructor} 
 // we found this constructor is necessary to modify blocks 
-	public Blocks (int spot, boolean discovered, int type, boolean flags) {
+	public Blocks (int spot, boolean discovered, int type, boolean flags, Discovery discovery) {
 //	1. ERROR - u have to assign parameter values 2 variables called before
 //  had to look up syntax on how to pull instance variables
 		this.spot = spot;
 		this.discovered = discovered;
 		this.type = type;
 		this.flags = flags;
-		this.tile = new ImageIcon ("beach tile.png");
+		this.tile = new ImageIcon ("crab.jpeg");
+		this.discovery = discovery;
 		//setIcon(tile);
+		
+        addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if(SwingUtilities.isRightMouseButton(e)) {
+                    rightClickButton();
+                } else {
+                    clickButton();
+                }
+            }
+
+            public void mouseEntered(MouseEvent e) {}
+            public void mouseExited(MouseEvent e) {}
+            public void mousePressed(MouseEvent e) {}
+            public void mouseReleased(MouseEvent e) {}
+        });
 		
 		addMouseListener(this);
 }
@@ -59,8 +78,15 @@ public boolean getFlags() {
 public ImageIcon gettile() {
 	return tile;
 }
+public void clickButton() {
+    discovery.click(this);
+}
 
-//looked up this method to get sound on button
+public void rightClickButton() {
+    discovery.rightClick(this);
+}
+
+//LOOKED UP this method to get sound on button
 private void playClickSound() {
     try {
         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("click ms.wav").getAbsoluteFile());
@@ -86,6 +112,11 @@ public void mouseEntered(MouseEvent e) {
 }
 public void mouseExited(MouseEvent e) {
 	
+}
+
+public boolean isFlagged() {
+	// TODO Auto-generated method stub
+	return false;
 }
 
 }
