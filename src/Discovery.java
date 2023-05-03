@@ -1,5 +1,5 @@
 
-// block click
+// what happens on each block click
 // win lose 
 // 0 empty, 1 mine, 2 number 
 
@@ -7,7 +7,11 @@ import java.util.ArrayList;
 
 public class Discovery {
 
+
+
     private ArrayList<Blocks> foundblocks = new ArrayList<Blocks>();
+
+    //adjacent blocks
     private ArrayList<Blocks> queue = new ArrayList<Blocks>();
 
     private static int flaggedBlocks = 0;

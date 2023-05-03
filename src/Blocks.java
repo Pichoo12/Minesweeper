@@ -36,9 +36,9 @@ private static final long serialVersionUID = 1L;
             @Override
             public void mouseClicked(MouseEvent e) {
                 if(SwingUtilities.isRightMouseButton(e)) {
-                    rightClickButton();
+                    rightClickButton();  //flagging method
                 } else {
-                    clickButton();
+                    clickButton(); //clicking method
                 }
             }
 
