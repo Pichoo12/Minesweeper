@@ -1,4 +1,5 @@
-//this class creates the tiles for our game using buttons and then we add it later in jpanel  	
+//this class creates the tiles for our game using buttons and then we add it later in jpanel  
+//do reset key here (variables to clear in grid class) 
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;

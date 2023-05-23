@@ -1,4 +1,4 @@
-
+//our game is customizable
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage; 
@@ -11,6 +11,10 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 	private BufferedImage back; 
 	private int key; 
 	private Player p;
+	private long startTime;
+	private Timer timer;
+	
+
 	//Number is array of blocks for grid .. makes blocks in grid
 		public static final int grid = 10;	
 
@@ -25,7 +29,16 @@ public Game() {
 		this.addMouseMotionListener(this);
 		key =-1; 
 		p = new Player();
-		
+	
+
+		timer = new Timer(1000, new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        updateTimer();
+		    }
+		});
+		timer.start();
+		startTime = System.currentTimeMillis();
+
 		//plays music in background
 			p.playmusic("background music.wav");
 		
@@ -48,7 +61,13 @@ public Game() {
 	      }
 	  	}
 	
+	private void updateTimer() {
+	    long elapsedTime = System.currentTimeMillis() - startTime;
+	    int seconds = (int) (elapsedTime / 1000);
+	    System.out.println("Time: " + seconds);
+	}
 
+	
 	
 public void paint(Graphics g){
 		
@@ -63,6 +82,7 @@ public void paint(Graphics g){
 		g2d.setFont( new Font("Arial", Font.BOLD, 10));
 		Color Black = new Color(0,0,0);
 		
+		repaint();
 
 
 
