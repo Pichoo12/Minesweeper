@@ -1,4 +1,8 @@
 //our game is customizable
+//right click is flagging
+//left click is mining
+//close out and opne to play again
+//time is below
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage; 
@@ -19,7 +23,7 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 		public static final int grid = 10;	
 
 	//Number of mines for the grid 
-		public static final int mines =  10;
+		public static final int mines =  5;
 		
 
 public Game() {
