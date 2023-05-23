@@ -15,7 +15,7 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 		public static final int grid = 10;	
 
 	//Number of mines for the grid 
-		public static final int mines =  10;
+		public static final int mines =  5;
 		
 
 public Game() {

@@ -34,7 +34,7 @@ public class Main {
         
         frame.getContentPane().add(grid);
         frame.setVisible(true);
-        
+            
         update(0);
     }
     
